@@ -7,7 +7,7 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the application and skip tests for faster deployment
-RUN mvc clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # --- Stage 2: Run the application ---
 FROM eclipse-temurin:17-jre-jammy

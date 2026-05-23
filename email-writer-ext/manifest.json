@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Email Writer Assistant",
+  "description": "AI powered Email reply Generator",
+  "version": "1.0",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://email-writer-backend-h4up.onrender.com/api/email/generate/*",
+    "*://mail.google.com/*"
+  ],
+  "action": {
+    "default_title": "Email Writer Assistant"
+  },
+  "content_scripts": [
+    {
+      "js": ["content.js"],
+      "matches": ["*://mail.google.com/*"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["*://mail.google.com/*"]
+    }
+  ]
+} 
